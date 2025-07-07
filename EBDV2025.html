@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escuelita Bíblica de Verano 2025</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;600&display=swap');
+        
+        :root {
+            --primary: #e69239;
+            --secondary: #1d3557;
+            --accent: #f1faee;
+            --text: #2b2d42;
+            --light-bg: rgba(241, 250, 238, 0.92);
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            background-image: url('https://m.media-amazon.com/images/I/71JMEhtRoZL._AC_SL1500_.jpg');
+            background-size: cover;
+            background-position: left;
+            background-attachment: fixed;
+            position: relative;
+        }
+        
+        .container {
+            max-width: 900px;
+            padding: 50px;
+            position: relative;
+            z-index: 1;
+            background-color: var(--light-bg);
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            margin: 30px;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(2px);
+        }
+        
+        .main-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5em;
+            line-height: 1.3;
+            margin-bottom: 15px;
+            font-weight: 900;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8em;
+            line-height: 1.4;
+            margin: 30px 0;
+            font-weight: 700;
+            color: var(--secondary);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .verse {
+            font-size: 1.5em;
+            font-style: italic;
+            margin: 30px 0;
+            color: var(--secondary);
+            position: relative;
+            display: inline-block;
+            padding: 0 25px;
+        }
+        
+        .verse::before, .verse::after {
+            content: '"';
+            font-size: 1.8em;
+            color: var(--primary);
+            position: absolute;
+            opacity: 0.7;
+        }
+        
+        .verse::before {
+            left: 0;
+            top: -10px;
+        }
+        
+        .verse::after {
+            right: 0;
+            bottom: -20px;
+        }
+        
+        .divider {
+            border-top: 2px dashed var(--primary);
+            width: 200px;
+            margin: 40px auto;
+            opacity: 0.6;
+        }
+        
+        .invitation-box {
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid var(--primary);
+            margin: 40px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .invitation-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(230, 57, 70, 0.05) 0%, rgba(241, 250, 238, 0.05) 100%);
+            z-index: 0;
+        }
+        
+        .date-highlight {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 20px 0;
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            border: 2px solid rgba(230, 57, 70, 0.2);
+        }
+        
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+            position: relative;
+        }
+        
+        .feature {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px 15px;
+            border-radius: 12px;
+            width: 150px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .feature i {
+            font-size: 2.5em;
+            color: var(--primary);
+            margin-bottom: 12px;
+            transition: transform 0.3s;
+        }
+        
+        .feature:hover i {
+            transform: scale(1.1);
+        }
+        
+        .feature p {
+            margin: 0;
+            font-size: 0.95em;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+        
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .social-button {
+            padding: 16px 35px;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 220px;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .social-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 0%, rgba(255, 255, 255, 0.3) 100%);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .social-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .social-button:hover::before {
+            opacity: 1;
+        }
+        
+        .social-button:active {
+            transform: translateY(2px);
+        }
+        
+        .social-button.facebook {
+            background: linear-gradient(135deg, #4267B2, #3b5998);
+        }
+        
+        .social-button.maps {
+            background: linear-gradient(135deg, #EA4335, #e74c3c);
+        }
+        
+        .call-to-action {
+            font-size: 1.4em;
+            font-weight: 600;
+            margin: 30px 0 20px;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding: 0 10px;
+        }
+        
+        .call-to-action::before, .call-to-action::after {
+            content: '★';
+            color: var(--primary);
+            margin: 0 10px;
+            font-size: 0.8em;
+            position: relative;
+            top: -2px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+                margin: 20px;
+                backdrop-filter: none;
+            }
+            
+            .main-title {
+                font-size: 1.8em;
+            }
+            
+            .subtitle {
+                font-size: 1.3em;
+            }
+            
+            .verse {
+                font-size: 1.3em;
+            }
+            
+            .button-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .features {
+                gap: 15px;
+            }
+            
+            .feature {
+                width: 130px;
+                padding: 15px 10px;
+            }
+            
+            .date-highlight {
+                font-size: 1.4em;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="">
+        <h1 class="main-title">La Iglesia de Cristo en Acapulco te invita a la<br>Escuelita Bíblica de Verano 2025</h1>
+        
+        <div class="divider"></div>
+        
+        <div class="">
+            <p style="font-size: 2rem; margin-bottom: 25px; font-weight: 500; position: relative; color: var(--primary);">¡Una experiencia inolvidable para los niños!</p>
+            
+            <div class="date-highlight">
+                <i class="far fa-calendar-alt"></i> 28 Julio - 1 Agosto 2025  <br/> 5:00 P.M.
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-bible"></i>
+                    <p>Enseñanza Bíblica</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-ice-cream"></i>
+                    <p>Refrigerios</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-gamepad"></i>
+                    <p>Juegos Cristianos</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-music"></i>
+                    <p>Alabanza Infantil</p>
+                </div>
+            </div>
+            
+            <p class="call-to-action">¡No te lo Puedes Perder!</p>
+        </div>
+        
+        <div class="button-container">
+            <a href="https://www.facebook.com/share/1AyNwz5jyn/" class="social-button facebook" target="_blank">
+                <i class="fab fa-facebook-f"></i> Facebook
+            </a>
+            <a href="https://goo.gl/maps/bKSH1isZfXKQkbwc7" class="social-button maps" target="_blank">
+                <i class="fas fa-map-marker-alt"></i> Ubicación
+            </a>
+        </div>
+    </div>
+</body>
+</html>
